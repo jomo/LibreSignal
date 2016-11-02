@@ -223,14 +223,6 @@ public class AttachmentManager {
     activity.startActivityForResult(intent, requestCode);
   }
 
-  public static void selectLocation(Activity activity, int requestCode) {
-    try {
-      activity.startActivityForResult(new PlacePicker.IntentBuilder().build(activity), requestCode);
-    } catch (GooglePlayServicesRepairableException | GooglePlayServicesNotAvailableException e) {
-      Log.w(TAG, e);
-    }
-  }
-
   public static void selectGif(Activity activity, int requestCode) {
     Intent intent = new Intent(activity, GiphyActivity.class);
     activity.startActivityForResult(intent, requestCode);

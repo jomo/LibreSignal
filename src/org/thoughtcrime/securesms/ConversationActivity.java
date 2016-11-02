@@ -362,10 +362,6 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
       recipients.addListener(this);
       fragment.reloadList();
       break;
-    case PICK_LOCATION:
-      SignalPlace place = new SignalPlace(PlacePicker.getPlace(data, this));
-      attachmentManager.setLocation(masterSecret, place, getCurrentMediaConstraints());
-      break;
     case PICK_GIF:
       setMedia(data.getData(), MediaType.GIF);
       break;
