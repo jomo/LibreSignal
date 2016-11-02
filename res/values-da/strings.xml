@@ -5,6 +5,8 @@
   <string name="no">Nej</string>
   <string name="delete">Slet</string>
   <string name="please_wait">Vent venligst...</string>
+  <!--AbstractNotificationBuilder-->
+  <string name="AbstractNotificationBuilder_new_message">Ny besked</string>
   <!--ApplicationPreferencesActivity-->
   <string name="ApplicationPreferencesActivity_currently_s">Nu: %s</string>
   <string name="ApplicationPreferenceActivity_you_havent_set_a_passphrase_yet">Du har endnu ikke indtastet et kodeord!</string>
@@ -19,6 +21,7 @@
   </plurals>
   <string name="ApplicationPreferencesActivity_delete">Slet</string>
   <string name="ApplicationPreferencesActivity_disable_passphrase">Deaktivér kodeord?</string>
+  <string name="ApplicationPreferencesActivity_this_will_permanently_unlock_signal_and_message_notifications">Dette vil permanent låse op for LibreSignal og besked notifikationer.</string>
   <string name="ApplicationPreferencesActivity_disable">Deaktivér</string>
   <string name="ApplicationPreferencesActivity_unregistering">Afregistrerer</string>
   <string name="ApplicationPreferencesActivity_unregistering_from_signal_messages_and_calls">Afregistrerer fra LibreSignalbeskeder og -opkald...</string>
@@ -61,12 +64,6 @@
   <!--CallScreen-->
   <string name="CallScreen_Incoming_call">Indgående opkald</string>
   <!--ConfirmIdentityDialog-->
-  <string name="ConfirmIdentityDialog_the_signature_on_this_key_exchange_is_different">Identitetsnøglen for %1$s er blevet ændret. Dette kan enten betyde at nogen forsøger at
-        opsnappe kommunikationen, eller at %2$s bare har geninstalleret LibreSignal og nu har en ny
-        identitetsnøgle.
-    </string>
-  <string name="ConfirmIdentityDialog_you_may_wish_to_verify_this_contact">Du bør verificere
-denne kontakt.</string>
   <string name="ConfirmIdentityDialog_accept">Godkend</string>
   <!--ContactsDatabase-->
   <string name="ContactsDatabase_message_s">Besked %s</string>
@@ -78,6 +75,7 @@ denne kontakt.</string>
   <string name="ConversationItem_view_secure_media_question">Gennemse sikre data?</string>
   <string name="ConversationItem_this_media_has_been_stored_in_an_encrypted_database_external_viewer_warning">Denne fil er gemt i en krypteret database. For at se den med et eksternt program, er den nødt til at blive dekrypteret og gemt til disk. Er du sikker på du vil gøre dette?</string>
   <string name="ConversationItem_error_received_stale_key_exchange_message">Fejl! Modtog en gammel udvekslingsnøgle.</string>
+  <string name="ConversationItem_received_key_exchange_message_tap_to_process">Udvekslingsnøgle er modtaget. Klik for at fortsætte</string>
   <string name="ConversationItem_group_action_left">%1$s har forladt gruppen.</string>
   <string name="ConversationItem_click_for_details">Tryk for detaljer</string>
   <string name="ConversationItem_click_to_approve_unencrypted">Tryk for at godkende ukrypteret besked</string>
@@ -124,8 +122,7 @@ denne kontakt.</string>
   <string name="ConversationActivity_mms_not_supported_title">MMS ikke understøttet</string>
   <string name="ConversationActivity_mms_not_supported_message">Denne besked kan ikke sendes, da din teleudbyder ikke understøtter MMS.</string>
   <string name="ConversationActivity_specify_recipient">Vælg venligst en kontakt</string>
-  <string name="ConversationActivity_unblock_question">Stop blokering?</string>
-  <string name="ConversationActivity_are_you_sure_you_want_to_unblock_this_contact">Er du sikker på, du vil stoppe blokering af denne kontakt?</string>
+  <string name="ConversationActivity_unblock_this_contact_question">Stop blokering af denne kontakt?</string>
   <string name="ConversationActivity_unblock">Stop blokering</string>
   <string name="ConversationActivity_attachment_exceeds_size_limits">Vedhæftet fil overskrider størrelsesbegrænsningen for den type meddelelse, du sender.</string>
   <string name="ConversationActivity_quick_camera_unavailable">Kamera utilgængeligt</string>
@@ -148,6 +145,7 @@ denne kontakt.</string>
     <item quantity="one">At gemme denne fil på disk vil tillade alle andre apps at tilgå den.\n\nFortsæt?</item>
     <item quantity="other">At gemme alle %1$d filer på disk vil tillade alle andre apps at tilgå dem.\n\nFortsæt?</item>
   </plurals>
+  <string name="ConversationFragment_file_saved_successfully">Fil lagring gennemført.</string>
   <string name="ConversationFragment_unable_to_write_to_sd_card_exclamation">Kunne ikke skrive til lageret!</string>
   <string name="ConversationFragment_collecting_attahments">Samler vedhæftninger...</string>
   <string name="ConversationFragment_pending">Afventer...</string>
@@ -219,14 +217,19 @@ denne kontakt.</string>
   <string name="ExportFragment_exporting_plaintext_to_storage">Eksporterer klartekst til hukommelsen...</string>
   <string name="ExportFragment_error_unable_to_write_to_storage">Fejl - kunne ikke gemme i hukommelsen.</string>
   <string name="ExportFragment_error_while_writing_to_storage">Fejl under gemning i hukommelsen.</string>
+  <string name="ExportFragment_export_successful">Eksport gennemført.</string>
   <!--GcmRefreshJob-->
   <string name="GcmRefreshJob_Permanent_Signal_communication_failure">Permanent fejl i LibreSignal-kommunikationen!</string>
+  <string name="GcmRefreshJob_Signal_was_unable_to_register_with_Google_Play_Services">LibreSignal var ude af stand til at registrere med Google Play Services. LibreSignal beskeder og opkald blev deaktiveret, prøv venligst at registrere igen i Indstillinger &gt; Advanceret.</string>
+  <!--GiphyActivity-->
+  <!--GiphyFragmentPageAdapter-->
   <!--GroupCreateActivity-->
   <string name="GroupCreateActivity_actionbar_title">Ny gruppe</string>
   <string name="GroupCreateActivity_actionbar_update_title">Opdatér gruppe</string>
   <string name="GroupCreateActivity_group_name_hint">Gruppenavn</string>
   <string name="GroupCreateActivity_actionbar_mms_title">Ny MMS-gruppe</string>
   <string name="GroupCreateActivity_contacts_dont_support_push">Du har valgt en person der ikke understøtter LibreSignal-grupper. Denne gruppe vil være en MMS-gruppe.</string>
+  <string name="GroupCreateActivity_youre_not_registered_for_signal">Du er ikke sat op til LibreSignal beskeder og opkald, så LibreSignal grupper er deaktiveret. Du bedes registrere dig under Indstillinger &gt; Advanceret.</string>
   <string name="GroupCreateActivity_contacts_mms_exception">En ukendt fejl har medført, at oprettelse af gruppen mislykkedes.</string>
   <string name="GroupCreateActivity_contacts_no_members">Der skal være mindst én person i gruppen!</string>
   <string name="GroupCreateActivity_contacts_invalid_number">En kontakt i gruppen har et nummer, der ikke kan læses. Ret nummeret eller fjern kontakten og prøv igen.</string>
@@ -268,16 +271,11 @@ vil det resultere i dupletter.</string>
   <string name="InputPanel_tap_and_hold_to_record_a_voice_message_release_to_send">Tryk og hold nede for at optage en stemmebesked. Slip for at afsende.</string>
   <!--InviteActivity-->
   <string name="InviteActivity_share">Del</string>
-  <string name="InviteActivity_send_sms">Send SMS</string>
   <string name="InviteActivity_cancel">Afbryd</string>
   <string name="InviteActivity_sending">Sender...</string>
   <string name="InviteActivity_heart_content_description">Hjerte</string>
   <string name="InviteActivity_invitations_sent">Invitationer afsendt!</string>
   <string name="InviteActivity_invite_to_signal">Invitér til LibreSignal</string>
-  <plurals name="InviteActivity_send_to_friends">
-    <item quantity="one">SEND TIL 1 VEN</item>
-    <item quantity="other">SEND TIL %d VENNER</item>
-  </plurals>
   <plurals name="InviteActivity_send_sms_invites">
     <item quantity="one">Send 1 SMS-invitation?</item>
     <item quantity="other">Send %d SMS-invitationer?</item>
@@ -291,7 +289,6 @@ vil det resultere i dupletter.</string>
   <string name="KeyScanningActivity_this_application_requires_barcode_scanner_would_you_like_to_install_it">LibreSignal skal bruge Barcode Scanner til QR-koder.</string>
   <!--MessageDetailsRecipient-->
   <string name="MessageDetailsRecipient_failed_to_send">Kunne ikke sende</string>
-  <string name="MessageDetailsRecipient_new_identity">Ny identitet</string>
   <!--MmsDownloader-->
   <string name="MmsDownloader_error_storing_mms">Fejl ved lagring af MMS!</string>
   <string name="MmsDownloader_error_connecting_to_mms_provider">Fejl! Ingen forbindelse til MMS-tjenesten...</string>
@@ -316,6 +313,7 @@ vil det resultere i dupletter.</string>
   <string name="MessageRecord_called_s">Ringede til %s</string>
   <string name="MessageRecord_missed_call_from">Mistet opkald fra %s</string>
   <string name="MessageRecord_s_is_on_signal_say_hey">%s er på LibreSignal, sig hej!</string>
+  <string name="MessageRecord_you">Dig</string>
   <!--PassphraseChangeActivity-->
   <string name="PassphraseChangeActivity_passphrases_dont_match_exclamation">Kodeord matcher ikke!</string>
   <string name="PassphraseChangeActivity_incorrect_old_passphrase_exclamation">Ugyldigt nuværende kodeord!</string>
@@ -340,6 +338,7 @@ vil det resultere i dupletter.</string>
   <string name="DeviceActivity_sorry_this_is_not_a_valid_device_link_qr_code">Beklager. Dette er ikke en gyldig QR-kode til at forbinde enheder.</string>
   <string name="DeviceProvisioningActivity_link_a_signal_device">Forbind en LibreSignal enhed?</string>
   <string name="DeviceProvisioningActivity_it_looks_like_youre_trying_to_link_a_signal_device_using_a_3rd_party_scanner">Det ser ud som om du forsøger at forbinde en LibreSignal-enhed vha. en tredjeparts-skanner. Af hensyn til sikkerhed, bør du skanne koden igen fra selve LibreSignal-appen.</string>
+  <!--ExpirationDialog-->
   <!--PassphrasePromptActivity-->
   <string name="PassphrasePromptActivity_enter_passphrase">Indtast kodeord</string>
   <string name="PassphrasePromptActivity_watermark_content_description">LibreSignal-ikon</string>
@@ -355,10 +354,8 @@ vil det resultere i dupletter.</string>
   <string name="RatingManager_later">Senere</string>
   <!--RecipientPreferencesActivity-->
   <string name="RecipientPreferenceActivity_block_this_contact_question">Blokér denne kontakt?</string>
-  <string name="RecipientPreferenceActivity_you_will_no_longer_receive_messages_or_calls_from_this_user">Du vil ikke længere modtage beskeder eller opkald fra denne bruger.</string>
   <string name="RecipientPreferenceActivity_block">Blokér</string>
   <string name="RecipientPreferenceActivity_unblock_this_contact_question">Stop blokering af denne kontakt?</string>
-  <string name="RecipientPreferenceActivity_are_you_sure_you_want_to_unblock_this_contact">Er du sikker på, du vil stoppe blokering af denne kontakt?</string>
   <string name="RecipientPreferenceActivity_unblock">Stop blokering</string>
   <string name="RecipientPreferenceActivity_enabled">Aktiveret</string>
   <string name="RecipientPreferenceActivity_disabled">Deaktiveret</string>
@@ -446,8 +443,6 @@ nøgle-besked!
   <string name="SmsMessageRecord_received_key_exchange_message_for_invalid_protocol_version">
 Modtog en nøgle-besked for en ugyldig protokol-version.
 </string>
-  <string name="SmsMessageRecord_received_updated_but_unknown_identity_information">Modtog opdaterede, men ukendte identitetsoplysninger. Klik for at validere identitet.</string>
-  <string name="SmsMessageRecord_secure_session_reset">Sikker forbindelse gendannet.</string>
   <string name="SmsMessageRecord_duplicate_message">Duplikeret besked.</string>
   <!--ThreadRecord-->
   <string name="ThreadRecord_left_the_group">Forlod gruppen...</string>
@@ -459,25 +454,6 @@ Modtog en nøgle-besked for en ugyldig protokol-version.
   <string name="ThreadRecord_media_message">Mediebesked</string>
   <string name="ThreadRecord_s_is_on_signal_say_hey">%s er på LibreSignal, sig hej!</string>
   <!--VerifyIdentityActivity-->
-  <string name="VerifyIdentityActivity_you_do_not_have_an_identity_key">Du har ingen identitetsnøgle.</string>
-  <string name="VerifyIdentityActivity_recipient_has_no_identity_key">Modtageren har ingen identitetsnøgle.</string>
-  <string name="VerifyIdentityActivity_recipient_has_no_identity_key_exclamation">Modtageren har ingen identiitetsnøgle!</string>
-  <string name="VerifyIdentityActivity_scan_contacts_qr_code">Scan kontakts QR kode</string>
-  <string name="VerifyIdentityActivity_display_your_qr_code">Vis din QR kode</string>
-  <string name="VerifyIdentityActivity_warning_the_scanned_key_does_not_match_please_check_the_fingerprint_text_carefully">ADVARSEL. Den skannede nøgle matcher IKKE! Tjek fingeraftryksteksten nøje.</string>
-  <string name="VerifyIdentityActivity_not_verified_exclamation">IKKE bekræftet!</string>
-  <string name="VerifyIdentityActivity_their_key_is_correct_it_is_also_necessary_to_verify_your_key_with_them_as_well">Modpartens nøgle er korrekt. Det er også nødvendigt at bekræfte din nøgle med modparten.</string>
-  <string name="VerifyIdentityActivity_verified_exclamation">Bekræftet!</string>
-  <string name="VerifyIdentityActivity_you_don_t_have_an_identity_key_exclamation">Du har ingen identitetsnøgle!</string>
-  <!--ViewIdentityActivity-->
-  <string name="ViewIdentityActivity_you_do_not_have_an_identity_key">Du har ingen identitetsnøgle.</string>
-  <string name="ViewIdentityActivity_scan_contacts_qr_code">Scan kontakts QR kode</string>
-  <string name="ViewIdentityActivity_display_your_qr_code">Vis din QR kode</string>
-  <string name="ViewIdentityActivity_warning_the_scanned_key_does_not_match_exclamation">ADVARSEL. Den skannede nøgle matcher IKKE!</string>
-  <string name="ViewIdentityActivity_not_verified_exclamation">IKKE bekræftet!</string>
-  <string name="ViewIdentityActivity_the_scanned_key_matches_exclamation">Den skannede nøgle matcher!</string>
-  <string name="ViewIdentityActivity_verified_exclamation">Bekræftet!</string>
-  <string name="ViewIdentityActivity_your_identity_fingerprint">Dit identitetsfingeraftryk</string>
   <!--KeyExchangeInitiator-->
   <string name="KeyExchangeInitiator_initiate_despite_existing_request_question">Initialisér til trods for eksisterende forespørgsel?</string>
   <string name="KeyExchangeInitiator_send">Send</string>
@@ -506,6 +482,7 @@ Modtog en nøgle-besked for en ugyldig protokol-version.
   <string name="ApplicationMigrationService_import_in_progress">I gang med at importere</string>
   <string name="ApplicationMigrationService_importing_text_messages">Importerer tekstbeskeder</string>
   <string name="ApplicationMigrationService_import_complete">Import fuldendt</string>
+  <string name="ApplicationMigrationService_system_database_import_is_complete">Import af systemdatabase er gennemført.</string>
   <!--KeyCachingService-->
   <string name="KeyCachingService_signal_passphrase_cached">Tryk for at åbne.</string>
   <string name="KeyCachingService_signal_passphrase_cached_with_lock">Tryk for at åbne, eller tryk på låsen for at lukke.</string>
@@ -599,7 +576,12 @@ Modtog en nøgle-besked for en ugyldig protokol-version.
   <string name="device_list_fragment__link_new_device">Tilkobel ny enhed</string>
   <!--experience_upgrade_activity-->
   <string name="experience_upgrade_activity__continue">fortsæt</string>
+  <!--expiration-->
+  <string name="expiration_off">Slukket</string>
+  <!--giphy_activity-->
+  <!--giphy_fragment-->
   <!--log_submit_activity-->
+  <string name="log_submit_activity__log_fetch_failed">Kunne ikke tilgå loggen på din enhed. Du kan alternativt benytte ADB for at få en debug log.</string>
   <string name="log_submit_activity__thanks">Tak for hjælpen!</string>
   <string name="log_submit_activity__submitting">Sender</string>
   <string name="log_submit_activity__posting_logs">Sender loggene til gist...</string>
@@ -645,6 +627,7 @@ Modtog en nøgle-besked for en ugyldig protokol-version.
   <string name="prompt_passphrase_activity__unlock">Lås op</string>
   <!--prompt_mms_activity-->
   <string name="prompt_mms_activity__signal_requires_mms_settings_to_deliver_media_and_group_messages">LibreSignal skal bruge MMS-indstillinger for at levere media og gruppebeskeder gennem din teleudbyder. Din enhed gør ikke denne information tilgængelig, hvilket nogle gange er tilfældet for låste enheder og andre begrænsende opsætninger.</string>
+  <string name="prompt_mms_activity__to_send_media_and_group_messages_tap_ok">Klik \"OK\" for at sende multimedie- og gruppebeskeder og udfyld indstillingerne. MMS-indstillingerne for din teleoperatør kan ofte findes ved at søge på \"din operatørs APN\". Du behøver kun gøre dette en gang.</string>
   <!--recipient_preferences_activity-->
   <string name="recipient_preference_activity__blocked">BLOKERET</string>
   <!--recipient_preferences-->
@@ -655,7 +638,6 @@ Modtog en nøgle-besked for en ugyldig protokol-version.
   <string name="recipient_preferences__block">Blokér</string>
   <string name="recipient_preferences__color">Farve</string>
   <string name="recipient_preferences__color_for_this_contact">Denne kontakts farve</string>
-  <string name="recipient_preferences__verify_identity">Bekræft identitet</string>
   <!--- redphone_call_controls-->
   <string name="redphone_call_card__signal_call">LibreSignalopkald</string>
   <string name="redphone_call_controls__end_call">læg på</string>
@@ -714,10 +696,7 @@ mislykkedes.</string>
   <string name="registration_progress_activity__check">Tjek</string>
   <!--recipients_panel-->
   <string name="recipients_panel__to"><small>Indtast navn eller nummer</small></string>
-  <string name="recipients_panel__add_member">Tilføj medlem</string>
-  <!--verify_identity_activity-->
-  <string name="verify_identity_activity__their_identity_they_read">Deres identitet (de læser):</string>
-  <string name="verify_identity_activity__your_identity_you_read">Din identitet (du læser):</string>
+  <!--verify_display_fragment-->
   <!--message_details_header-->
   <string name="message_details_header__issues_need_your_attention">Nogle problemer kræver din opmærsomhed.</string>
   <string name="message_details_header__sent">Sendt</string>
@@ -731,9 +710,7 @@ mislykkedes.</string>
   <string name="AndroidManifest__enter_passphrase">Indtast kodeord</string>
   <string name="AndroidManifest__select_contacts">Vælg kontakter</string>
   <string name="AndroidManifest__signal_detected">LibreSignal detekteret</string>
-  <string name="AndroidManifest__public_identity_key">Offentlig identitetsnøgle</string>
   <string name="AndroidManifest__change_passphrase">Ændr kodeord</string>
-  <string name="AndroidManifest__verify_identity">Verificér identitet</string>
   <string name="AndroidManifest__log_submit">Indsend fejlfindingslog</string>
   <string name="AndroidManifest__media_preview">Mediepreview</string>
   <string name="AndroidManifest__media_overview">Alle billeder</string>
@@ -744,7 +721,6 @@ mislykkedes.</string>
   <string name="AndroidManifest_archived_conversations">Arkiverede samtaler</string>
   <!--arrays.xml-->
   <string name="arrays__import_export">Importér / eksportér</string>
-  <string name="arrays__your_identity_key">Din identitetsnøgle</string>
   <string name="arrays__use_default">Anvend standard</string>
   <string name="arrays__use_custom">Anvend tilpasset</string>
   <string name="arrays__mute_for_one_hour">Dæmp 1 time</string>
@@ -788,6 +764,8 @@ mislykkedes.</string>
   <string name="preferences__screen_security">Skærmsikkerhed</string>
   <string name="preferences__disable_screen_security_to_allow_screen_shots">Blokér skærmbillede (screenshots) i listen \\"forrige apps\\" og i LibreSignal</string>
   <string name="preferences__auto_lock_signal_after_a_specified_time_interval_of_inactivity">Lås automatisk LibreSignal efter et valgt tidsinterval med inaktivitet</string>
+  <string name="preferences__inactivity_timeout_passphrase">Kodeord for timeout ved inaktivitet.</string>
+  <string name="preferences__inactivity_timeout_interval">Længde for interval ved inaktivitet</string>
   <string name="preferences__notifications">Notifikationer</string>
   <string name="preferences__enable_message_notifications">Aktivér beskednotifikationer</string>
   <string name="preferences__new_contacts_notifications">Notifikationer om nye kontakter</string>
@@ -892,6 +870,8 @@ mislykkedes.</string>
   <string name="conversation_context__menu_resend_message">Send besked igen</string>
   <!--conversation_context_image-->
   <string name="conversation_context_image__save_attachment">Gem vedhæftet fil</string>
+  <!--conversation_expiring_off-->
+  <!--conversation_expiring_on-->
   <!--conversation_insecure-->
   <string name="conversation_insecure__invite">Invitér</string>
   <!--conversation_insecure_no_push-->
@@ -910,8 +890,6 @@ mislykkedes.</string>
   <!--conversation_list_fragment-->
   <string name="conversation_list_fragment__fab_content_description">Ny samtale</string>
   <!--conversation_secure_verified-->
-  <string name="conversation_secure_verified__menu_security">Sikkerhed</string>
-  <string name="conversation_secure_verified__menu_verify_identity">Verificér identitet</string>
   <string name="conversation_secure_verified__menu_reset_secure_session">Gendan sikker forbindelse</string>
   <!--conversation_muted-->
   <string name="conversation_muted__unmute">Ophæv dæmpning</string>

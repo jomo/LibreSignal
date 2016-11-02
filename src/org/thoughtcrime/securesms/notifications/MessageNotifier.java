@@ -44,6 +44,7 @@ import org.thoughtcrime.securesms.R;
 import org.thoughtcrime.securesms.crypto.MasterSecret;
 import org.thoughtcrime.securesms.database.DatabaseFactory;
 import org.thoughtcrime.securesms.database.MessagingDatabase;
+import org.thoughtcrime.securesms.database.MessagingDatabase.MarkedMessageInfo;
 import org.thoughtcrime.securesms.database.MessagingDatabase.SyncMessageId;
 import org.thoughtcrime.securesms.database.MmsSmsDatabase;
 import org.thoughtcrime.securesms.database.PushDatabase;
@@ -57,6 +58,7 @@ import org.thoughtcrime.securesms.recipients.Recipient;
 import org.thoughtcrime.securesms.recipients.RecipientFactory;
 import org.thoughtcrime.securesms.recipients.Recipients;
 import org.thoughtcrime.securesms.service.KeyCachingService;
+import org.thoughtcrime.securesms.util.ServiceUtil;
 import org.thoughtcrime.securesms.util.SpanUtil;
 import org.thoughtcrime.securesms.util.TextSecurePreferences;
 import org.whispersystems.signalservice.api.messages.SignalServiceEnvelope;
@@ -140,13 +142,8 @@ public class MessageNotifier {
                                                .getRecipientsForThreadId(threadId);
 
     if (isVisible) {
-      List<SyncMessageId> messageIds = threads.setRead(threadId);
-
-      if (!messageIds.isEmpty()) {
-        ApplicationContext.getInstance(context)
-                          .getJobManager()
-                          .add(new MultiDeviceReadUpdateJob(context, messageIds));
-      }
+      List<MarkedMessageInfo> messageIds = threads.setRead(threadId);
+      MarkReadReceiver.process(context, messageIds);
     }
 
     if (!TextSecurePreferences.isNotificationsEnabled(context) ||
@@ -278,7 +275,8 @@ public class MessageNotifier {
 
     if (signal) {
       builder.setAlarms(notificationState.getRingtone(), notificationState.getVibrate());
-      builder.setTicker(notifications.get(0).getText());
+      builder.setTicker(notifications.get(0).getIndividualRecipient(),
+                        notifications.get(0).getText());
     }
 
     ((NotificationManager)context.getSystemService(Context.NOTIFICATION_SERVICE))
@@ -286,7 +284,9 @@ public class MessageNotifier {
   }
 
   private static void sendInThreadNotification(Context context, Recipients recipients) {
-    if (!TextSecurePreferences.isInThreadNotifications(context)) {
+    if (!TextSecurePreferences.isInThreadNotifications(context) ||
+        ServiceUtil.getAudioManager(context).getRingerMode() != AudioManager.RINGER_MODE_NORMAL)
+    {
       return;
     }
 

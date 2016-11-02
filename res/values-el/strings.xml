@@ -1,10 +1,12 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <string name="app_name">LibreSignal</string>
+  <string name="app_name">Σήμα</string>
   <string name="yes">Ναι</string>
   <string name="no">Όχι</string>
   <string name="delete">Διαγραφή</string>
   <string name="please_wait">Παρακαλώ περίμενε...</string>
+  <!--AbstractNotificationBuilder-->
+  <string name="AbstractNotificationBuilder_new_message">Νέο Μήνυμα</string>
   <!--ApplicationPreferencesActivity-->
   <string name="ApplicationPreferencesActivity_currently_s">Αυτή τη στιγμή: %s</string>
   <string name="ApplicationPreferenceActivity_you_havent_set_a_passphrase_yet">Δεν έχεις ορίσει συνθηματικό!</string>
@@ -62,13 +64,11 @@
   <!--CallScreen-->
   <string name="CallScreen_Incoming_call">Εισερχόμενη κλήση</string>
   <!--ConfirmIdentityDialog-->
-  <string name="ConfirmIdentityDialog_the_signature_on_this_key_exchange_is_different">Το
-περιεχόμενο του κλειδιού ταυτοποίησης για τον/την %1$s άλλαξε. Αυτό μπορεί να σημαίνει
-πως κάποιος προσπαθεί να υποκλέψει τις επικοινωνίες σου ή πως απλά ο/η %2$s
-επανεγκατέστησε το LibreSignal και πλέον έχει νέο κλειδί ταυτοποίησης.</string>
-  <string name="ConfirmIdentityDialog_you_may_wish_to_verify_this_contact">Προτείνεται να επιβεβαιώσεις
-αυτήν την επαφή.
-    </string>
+  <string name="ConfirmIdentityDialog_the_signature_on_this_key_exchange_is_different">Οι
+αριθμοί ασφαλείας για τον/την %1$s έχουν αλλάξει. Αυτό μπορεί να σημαίνει είτε πως κάποιος προσπαθεί
+να υποκλέψει τις επικοινωνίες σου, είτε ότι ο/η %2$s απλά επανεγκατέστησε το LibreSignal.</string>
+  <string name="ConfirmIdentityDialog_you_may_wish_to_verify_this_contact">Ίσως επιθυμείς να επαληθεύσεις
+τους αριθμούς ασφαλείας για αυτή την επαφή.</string>
   <string name="ConfirmIdentityDialog_accept">Αποδοχή</string>
   <!--ContactsDatabase-->
   <string name="ContactsDatabase_message_s">Μήνυμα %s</string>
@@ -127,13 +127,14 @@
   <string name="ConversationActivity_mms_not_supported_title">Τα MMS δεν υποστηρίζονται</string>
   <string name="ConversationActivity_mms_not_supported_message">Αυτό το μήνυμα δεν μπορεί να αποσταλεί δεδομένου ότι φορέας σου δεν υποστηρίζει MMS.</string>
   <string name="ConversationActivity_specify_recipient">Παρακαλώ επιλέξτε μια επαφή</string>
-  <string name="ConversationActivity_unblock_question">Ξεμπλοκάρισμα;</string>
-  <string name="ConversationActivity_are_you_sure_you_want_to_unblock_this_contact">Είσαι σίγουρος/η πως θες να ξεμπλοκάρεις αυτή την επαφή;</string>
+  <string name="ConversationActivity_unblock_this_contact_question">Ξεμπλοκάρισμα αυτής της επαφής;</string>
+  <string name="ConversationActivity_you_will_once_again_be_able_to_receive_messages_and_calls_from_this_contact">Θα μπορείς και πάλι να λαμβάνεις μηνύματα και κλήσεις από αυτή την επαφή.</string>
   <string name="ConversationActivity_unblock">Ξεμπλοκάρισμα</string>
   <string name="ConversationActivity_attachment_exceeds_size_limits">Το συννημένο υπερβαίνει τα όρια μεγέους για το είδος μηνύματος που στέλνεις.</string>
   <string name="ConversationActivity_quick_camera_unavailable">Κάμερα μη διαθέσιμη</string>
   <string name="ConversationActivity_unable_to_record_audio">Η ηχογράφηση απέτυχε!</string>
   <string name="ConversationActivity_error_sending_voice_message">Σφάλμα κατά την αποστολή μηνύματος φωνής...</string>
+  <string name="ConversationActivity_there_is_no_app_available_to_handle_this_link_on_your_device">Δεν υπάρχει διαθέσιμη εφαρμογή στην συσκευή σου που να μπορεί να διαχειριστεί αυτό τον σύνδεσμο.</string>
   <!--ConversationFragment-->
   <string name="ConversationFragment_message_details">Στοιχεία μηνύματος</string>
   <string name="ConversationFragment_transport_s_sent_received_s"> Μέσο μεταφοράς:  %1$s
@@ -178,6 +179,7 @@
   <string name="ConversationFragment_deleting_messages">Διαγραφή μηνυμάτων...</string>
   <!--ConversationListActivity-->
   <string name="ConversationListActivity_search">Αναζήτηση...</string>
+  <string name="ConversationListActivity_there_is_no_browser_installed_on_your_device">Δεν υπάρχει εγκατεστημένος browser στην συσκευή σου.</string>
   <!--ConversationListFragment-->
   <plurals name="ConversationListFragment_delete_selected_conversations">
     <item quantity="one">Διαγραφή επιλεγμένης συζήτησης;</item>
@@ -243,6 +245,11 @@
   <!--GcmRefreshJob-->
   <string name="GcmRefreshJob_Permanent_Signal_communication_failure">Μόνιμη αποτυχία επικοινωνίας του LibreSignal!</string>
   <string name="GcmRefreshJob_Signal_was_unable_to_register_with_Google_Play_Services">Το LibreSignal δεν μπόρεσε να εγγραφτεί στις Υπηρεσίες Google Play. Τα μηνύματα και οι κλήσεις του LibreSignal έχουν απενεργοποιηθεί. Παρακαλώ προσπάθησε να επανεγγραφτείς στις Ρυθμίσεις &gt; Προχωρημένες Ρυθμίσεις.</string>
+  <!--GiphyActivity-->
+  <string name="GiphyActivity_error_while_retrieving_full_resolution_gif">Σφάλμα κατά την απόκτηση της πλήρης ανάλυσης του GiF...</string>
+  <!--GiphyFragmentPageAdapter-->
+  <string name="GiphyFragmentPagerAdapter_gifs">GIFs</string>
+  <string name="GiphyFragmentPagerAdapter_stickers">Αυτοκόλλητα</string>
   <!--GroupCreateActivity-->
   <string name="GroupCreateActivity_actionbar_title">Νέα ομάδα</string>
   <string name="GroupCreateActivity_actionbar_update_title">Ενημέρωση ομάδας</string>
@@ -296,15 +303,15 @@
   <string name="InputPanel_tap_and_hold_to_record_a_voice_message_release_to_send">Πάτα και κράτα πατημένο για να ηχογραφήσεις ένα μήνυμα φωνής, άφησε το κουμπί για αποστολή</string>
   <!--InviteActivity-->
   <string name="InviteActivity_share">Διαμοιρασμός</string>
-  <string name="InviteActivity_send_sms">Αποστολή SMS</string>
+  <string name="InviteActivity_choose_contacts">Επιλογή επαφών</string>
   <string name="InviteActivity_cancel">Ακύρωση</string>
   <string name="InviteActivity_sending">Αποστολή...</string>
   <string name="InviteActivity_heart_content_description">Καρδιά</string>
   <string name="InviteActivity_invitations_sent">Οι προσκλήσεις στάλθηκαν!</string>
   <string name="InviteActivity_invite_to_signal">Πρόσκληση στο LibreSignal</string>
-  <plurals name="InviteActivity_send_to_friends">
-    <item quantity="one">ΑΠΟΣΤΟΛΗ ΣΕ 1 ΦΙΛΟ</item>
-    <item quantity="other">ΑΠΟΣΤΟΛΗ ΣΕ %d ΦΙΛΟΥΣ</item>
+  <plurals name="InviteActivity_send_sms_to_friends">
+    <item quantity="one">ΑΠΟΣΤΟΛΗ SMS ΣΕ 1 ΦΙΛΗ/Ο</item>
+    <item quantity="other">ΑΠΟΣΤΟΛΗ SMS ΣΕ %d ΦΙΛΕΣ/ΟΥΣ</item>
   </plurals>
   <plurals name="InviteActivity_send_sms_invites">
     <item quantity="one">Αποστολή 1 πρόσκλησης μέσω SMS; </item>
@@ -319,7 +326,7 @@
   <string name="KeyScanningActivity_this_application_requires_barcode_scanner_would_you_like_to_install_it">Το LibreSignal χρειάζεται την εφαρμογή Barcode Scanner για κωδικούς QR</string>
   <!--MessageDetailsRecipient-->
   <string name="MessageDetailsRecipient_failed_to_send">Αποτυχία αποστολής</string>
-  <string name="MessageDetailsRecipient_new_identity">Νέα ταυτότητα</string>
+  <string name="MessageDetailsRecipient_new_safety_numbers">Νέοι αριθμοί ασφαλείας</string>
   <!--MmsDownloader-->
   <string name="MmsDownloader_error_storing_mms">Σφάλμα κατά την αποθήκευση MMS! </string>
   <string name="MmsDownloader_error_connecting_to_mms_provider">Σφάλμα κατά στη σύνδεση με τον πάροχο MMS...</string>
@@ -344,6 +351,9 @@
   <string name="MessageRecord_called_s">Κλήση προς τον/την %s</string>
   <string name="MessageRecord_missed_call_from">Αναπάντητη κλήση από τον/την %s</string>
   <string name="MessageRecord_s_is_on_signal_say_hey">Ο/Η %s είναι στο LibreSignal, πες ένα γεια!</string>
+  <string name="MessageRecord_you">Εσύ</string>
+  <string name="MessageRecord_s_set_disappearing_message_time_to_s">%1$s ορισμός χρόνου εξαφάνισης μηνυμάτων σε %2$s</string>
+  <string name="MessageRecord_your_safety_numbers_with_s_have_changed">Οι αριθμοί ασφαλείας με τον/την %s έχουν αλλάξει</string>
   <!--PassphraseChangeActivity-->
   <string name="PassphraseChangeActivity_passphrases_dont_match_exclamation">Τα συνθηματικά δε ταιριάζουν!</string>
   <string name="PassphraseChangeActivity_incorrect_old_passphrase_exclamation">Λανθασμένο, παλιό συνθηματικό!</string>
@@ -367,6 +377,10 @@
   <string name="DeviceActivity_sorry_this_is_not_a_valid_device_link_qr_code">Συγγνώμη, αυτός δεν είναι ένας έγκυρος κωδικός QR για σύνδεση συσκευών.</string>
   <string name="DeviceProvisioningActivity_link_a_signal_device">Σύνδεση μιας συσκευής LibreSignal;</string>
   <string name="DeviceProvisioningActivity_it_looks_like_youre_trying_to_link_a_signal_device_using_a_3rd_party_scanner">Φαίνεται πως προσπαθείς να συνδέσεις μια συσκευή LibreSignal χρησιμοποιώντας ένα τρίτο πρόγραμμα σάρωσης. Για την προστασία σου, παρακαλώ ξανασκάνναρε τον κωδικό μέσα από το LibreSignal.</string>
+  <!--ExpirationDialog-->
+  <string name="ExpirationDialog_disappearing_messages">Μηνήματα που εξαφανίζονται</string>
+  <string name="ExpirationDialog_your_messages_will_not_expire">Τα μηνύματά σου δεν θα λήξουν.</string>
+  <string name="ExpirationDialog_your_messages_will_disappear_s_after_they_have_been_seen">Μηνύματα που στέλνονται και λαμβάνονται σε αυτή την συζήτηση θα εξαφανίζονται %s αφού τα δεις.</string>
   <!--PassphrasePromptActivity-->
   <string name="PassphrasePromptActivity_enter_passphrase">Εισαγωγή συνθηματικό</string>
   <string name="PassphrasePromptActivity_watermark_content_description">Εικονίδιο LibreSignal</string>
@@ -380,12 +394,13 @@
   <string name="RatingManager_rate_now">Βαθμολόγηση τώρα!</string>
   <string name="RatingManager_no_thanks">Οχι ευχαριστώ</string>
   <string name="RatingManager_later">Αργότερα</string>
+  <string name="RatingManager_whoops_the_play_store_app_does_not_appear_to_be_installed">Ουπς, δεν φαίνεται να έχεις εγκατεστημένη την εφαρμογή Play Store στην συσκευή σου.</string>
   <!--RecipientPreferencesActivity-->
   <string name="RecipientPreferenceActivity_block_this_contact_question">Μπλοκάρισμα αυτής της επαφής;</string>
-  <string name="RecipientPreferenceActivity_you_will_no_longer_receive_messages_or_calls_from_this_user">Δεν θα λαμβάνεις πλέον μηνύματα ή κλήσεις από αυτόν τον χρήστη.</string>
+  <string name="RecipientPreferenceActivity_you_will_no_longer_receive_messages_and_calls_from_this_contact">Δεν θα λαμβάνεις μηνύματα και κλήσεις από αυτή την επαφή πια.</string>
   <string name="RecipientPreferenceActivity_block">Μπλοκάρισμα</string>
   <string name="RecipientPreferenceActivity_unblock_this_contact_question">Ξεμπλοκάρισμα αυτής της επαφής;</string>
-  <string name="RecipientPreferenceActivity_are_you_sure_you_want_to_unblock_this_contact">Είσαι σίγουρος/η πως θες να ξεμπλοκάρεις αυτή την επαφή;</string>
+  <string name="RecipientPreferenceActivity_you_will_once_again_be_able_to_receive_messages_and_calls_from_this_contact">Θα μπορείς και πάλι να λαμβάνεις μηνύματα και κλήσεις από αυτή την επαφή.</string>
   <string name="RecipientPreferenceActivity_unblock">Ξεμπλοκάρισμα</string>
   <string name="RecipientPreferenceActivity_enabled">Ενεργοποιημένο</string>
   <string name="RecipientPreferenceActivity_disabled">Απενεργοποιημένο</string>
@@ -465,9 +480,9 @@
     </string>
   <string name="SmsMessageRecord_received_key_exchange_message_for_invalid_protocol_version">
 Ελήφθη μήνυμα ανταλλαγής κλειδιών για άκυρη έκδοση του πρωτόκολλου.</string>
-  <string name="SmsMessageRecord_received_message_with_unknown_identity_key_tap_to_process">Ελήφθη μήνυμα με άγνωστο κλειδί ταυτότητας. Πάτα για επεξεργασία και προβολή.</string>
-  <string name="SmsMessageRecord_received_updated_but_unknown_identity_information">Λήφθηκε ενημερωμένη αλλά άγνωστη πληροφορία ταυτότητας. Πάτησε για επιβεβαίωση ταυτότητας.</string>
-  <string name="SmsMessageRecord_secure_session_reset">Επαναφορά ασφαλούς συνεδρίας.</string>
+  <string name="SmsMessageRecord_received_message_with_new_safety_numbers_tap_to_process">Λάβαμε μήνυμα με νέους αριθμούς ασφαλείας. Πάτα για να τους επεξεργαστείς και να τους δεις.</string>
+  <string name="SmsMessageRecord_secure_session_reset">Επανεκκίνησες την ασφαλή συνεδρία.</string>
+  <string name="SmsMessageRecord_secure_session_reset_s">Ο/Η %s επανεκκίνησε την ασφαλή συνεδρία.</string>
   <string name="SmsMessageRecord_duplicate_message">Διπλότυπο μήνυμα.</string>
   <!--ThreadRecord-->
   <string name="ThreadRecord_left_the_group">Έχεις φύγει από την ομάδα...</string>
@@ -478,26 +493,12 @@
   <string name="ThreadRecord_missed_call">Αναπάντητη κλήση</string>
   <string name="ThreadRecord_media_message">Μήνυμα πολυμέσων</string>
   <string name="ThreadRecord_s_is_on_signal_say_hey">Ο/Η %s είναι στο LibreSignal, πές ένα γεια!</string>
+  <string name="ThreadRecord_disappearing_message_time_updated_to_s">Ο χρόνος εξαφάνισης μηνυμάτων ρυθμίστηκε σε %s</string>
+  <string name="ThreadRecord_your_safety_numbers_with_s_have_changed">Οι αριθμοί ασφαλείας με τον/την %s έχουν αλλάξει</string>
   <!--VerifyIdentityActivity-->
-  <string name="VerifyIdentityActivity_you_do_not_have_an_identity_key">Δεν έχεις κλειδί ταυτότητας.</string>
-  <string name="VerifyIdentityActivity_recipient_has_no_identity_key">Ο παραλήπτης δεν έχει κλειδί ταυτότητας.</string>
-  <string name="VerifyIdentityActivity_recipient_has_no_identity_key_exclamation">Ο παραλήπτης δεν έχει κλειδί ταυτότητας!</string>
-  <string name="VerifyIdentityActivity_scan_contacts_qr_code">Σκανάρισμα κωδικού QR επαφής</string>
-  <string name="VerifyIdentityActivity_display_your_qr_code">Προβολή του κωδικού QR σου</string>
-  <string name="VerifyIdentityActivity_warning_the_scanned_key_does_not_match_please_check_the_fingerprint_text_carefully">ΠΡΟΣΟΧΗ, το σαρωμένο κλειδί ΔΕΝ ταιριάζει! Έλεγξε προσεκτικά το αποτύπωμα.</string>
-  <string name="VerifyIdentityActivity_not_verified_exclamation">ΔΕΝ επιβεβαιώθηκε!</string>
-  <string name="VerifyIdentityActivity_their_key_is_correct_it_is_also_necessary_to_verify_your_key_with_them_as_well">Το κλειδί του/της είναι σωστό. Πρέπει επίσης και αυτός/η να επιβεβαιώσει το κλειδί σου.</string>
-  <string name="VerifyIdentityActivity_verified_exclamation">Επιβεβαιώθηκε!</string>
-  <string name="VerifyIdentityActivity_you_don_t_have_an_identity_key_exclamation">Δεν έχεις κλειδί ταυτότητας!</string>
-  <!--ViewIdentityActivity-->
-  <string name="ViewIdentityActivity_you_do_not_have_an_identity_key">Δεν έχεις κλειδί ταυτότητας.</string>
-  <string name="ViewIdentityActivity_scan_contacts_qr_code">Σκανάρισμα κωδικού QR επαφής</string>
-  <string name="ViewIdentityActivity_display_your_qr_code">Προβολή του κωδικού QR σου</string>
-  <string name="ViewIdentityActivity_warning_the_scanned_key_does_not_match_exclamation">ΠΡΟΣΟΧΗ, το σαρωμένο κλειδί ΔΕΝ ταιριάζει!</string>
-  <string name="ViewIdentityActivity_not_verified_exclamation">ΔΕΝ επιβεβαιώθηκε!</string>
-  <string name="ViewIdentityActivity_the_scanned_key_matches_exclamation">Το σαρωμένο κλειδί ταιριάζει!</string>
-  <string name="ViewIdentityActivity_verified_exclamation">Επιβεβαιώθηκε!</string>
-  <string name="ViewIdentityActivity_your_identity_fingerprint">Το αποτύπωμα της ταυτότητάς σου</string>
+  <string name="VerifyIdentityActivity_your_contact_is_running_an_old_version_of_signal">Η επαφή σου τρέχει μια παλιά έκδοση του LibreSignal, παρακαλώ ζήτα του/της να το αναβαθμίσει πριν την επιβεβαίωση των αριθμών ασφαλείας.</string>
+  <string name="VerifyIdentityActivity_you_re_attempting_to_verify_safety_numbers_with">Προσπαθείς να επιβεβαιώσεις τους αριθμούς ασφαλείας με τον/την %1$s, αλλά σκάναρες τον/την %2$s.</string>
+  <string name="VerifyIdentityActivity_the_scanned_qr_code_is_not_a_correctly_formatted_safety_number">Ο σκαναρισμένος QR κωδικός δεν είναι σωστά μορφοποιημένος κωδικός επιβεβαίωσης αριθμών ασφαλείας. Παρακαλώ προσπάθησε να σκανάρεις ξανά.</string>
   <!--KeyExchangeInitiator-->
   <string name="KeyExchangeInitiator_initiate_despite_existing_request_question">Εκκίνηση παρά το υπάρχον αίτημα;</string>
   <string name="KeyExchangeInitiator_send">Αποστολή</string>
@@ -620,11 +621,43 @@
   <string name="device_list_fragment__link_new_device">Σύνδεση νέας συσκευής</string>
   <!--experience_upgrade_activity-->
   <string name="experience_upgrade_activity__continue">συνέχεια</string>
+  <!--expiration-->
+  <string name="expiration_off">Απενεργοποίηση</string>
+  <plurals name="expiration_seconds">
+    <item quantity="one">1 δευτερόλεπτο</item>
+    <item quantity="other">%d δευτερόλεπτα</item>
+  </plurals>
+  <string name="expiration_seconds_abbreviated">%dδ</string>
+  <plurals name="expiration_minutes">
+    <item quantity="one">1 λεπτό</item>
+    <item quantity="other">%d λεπτά</item>
+  </plurals>
+  <string name="expiration_minutes_abbreviated">%dλ</string>
+  <plurals name="expiration_hours">
+    <item quantity="one">1 ώρα</item>
+    <item quantity="other">%d ώρες</item>
+  </plurals>
+  <string name="expiration_hours_abbreviated">%dώρ</string>
+  <plurals name="expiration_days">
+    <item quantity="one">1 ημέρα</item>
+    <item quantity="other">%d ημέρες</item>
+  </plurals>
+  <string name="expiration_days_abbreviated">%dημ</string>
+  <plurals name="expiration_weeks">
+    <item quantity="one">1 εβδομάδα</item>
+    <item quantity="other">%d εβδομάδες</item>
+  </plurals>
+  <string name="expiration_weeks_abbreviated">%dεβ</string>
+  <!--giphy_activity-->
+  <string name="giphy_activity_toolbar__search_gifs_and_stickers">Αναζήτηση GIFs και αυτοκολλήτων</string>
+  <!--giphy_fragment-->
+  <string name="giphy_fragment__no_results_found">Δεν βρέθηκαν αποτελέσματα.</string>
   <!--log_submit_activity-->
   <string name="log_submit_activity__log_fetch_failed">Αποτυχία ανάγνωσης αρχείου συμβάντων για τη συσκευή σου. Μπορείς να χρησιμοποιήσεις το ADB για να πάρεις ένα αρχείο συμβάντων αποσφαλμάτωσης.</string>
   <string name="log_submit_activity__thanks">Ευχαριστούμε για τη βοήθειά σου!</string>
   <string name="log_submit_activity__submitting">Αποστολή</string>
   <string name="log_submit_activity__posting_logs">Αποστολή των αρχείων συμβάντων στο gist…</string>
+  <string name="log_submit_activity__no_browser_installed">Δεν υπάρχει εγκατεστημένος φυλλομετρητής</string>
   <!--database_migration_activity-->
   <string name="database_migration_activity__would_you_like_to_import_your_existing_text_messages">Θέλεις να εισάγεις τα υπάρχοντα μηνύματά σου στη κρυπτογραφημένη βάση δεδομένων του LibreSignal;</string>
   <string name="database_migration_activity__the_default_system_database_will_not_be_modified">Η προκαθορισμένη βάση δεδομένων του συστήματος δε θα αλλαχθεί καθόλου.</string>
@@ -678,7 +711,7 @@
   <string name="recipient_preferences__block">Μπλοκάρισμα</string>
   <string name="recipient_preferences__color">Χρώμα</string>
   <string name="recipient_preferences__color_for_this_contact">Χρώμα επαφής</string>
-  <string name="recipient_preferences__verify_identity">Επιβεβαίωση ταυτότητας</string>
+  <string name="recipient_preferences__verify_safety_numbers">Επαλήθευση αριθμών ασφαλείας</string>
   <!--- redphone_call_controls-->
   <string name="redphone_call_card__signal_call">Κλήση LibreSignal</string>
   <string name="redphone_call_controls__end_call">τερματισμός κλήσης</string>
@@ -756,14 +789,15 @@
   <string name="registration_progress_activity__check">Έλεγχος</string>
   <!--recipients_panel-->
   <string name="recipients_panel__to"><small>Εισαγωγή ονόματος ή αριθμού</small></string>
-  <string name="recipients_panel__add_member">Προσθήκη μέλους</string>
-  <!--verify_identity_activity-->
-  <string name="verify_identity_activity__their_identity_they_read">Η ταυτότητά του/της (αυτός/η διαβάζει):</string>
-  <string name="verify_identity_activity__your_identity_you_read">Η ταυτότητά σου (εσύ διαβάζεις):</string>
+  <string name="recipients_panel__add_members">Προσθήκη μελών</string>
+  <!--verify_display_fragment-->
+  <string name="verify_display_fragment__scan_the_code_on_your_contact_s_phone_or_ask_them_to_scan_your_code_to_verify_that_your_messages_are_end_to_end_encrypted_you_can_alternately_compare_the_number_above">Αν θέλεις να επιβεβαιώσεις την ασφάλεια της κρυπτογραφίας από άκρο σε άκρο με τον/την %s, σύγκρινε τους παραπάνω αριθμούς με τους αριθμούς στην συσκευή του/της. Εναλλακτικά, μπορείς να σκανάρεις τον κωδικό στο κινητό του/της, ή να του/της ζητήσεις να σκανάρει τον δικό σου κωδικό.</string>
+  <string name="verify_display_fragment__tap_to_scan">Πάτα για σκανάρισμα</string>
   <!--message_details_header-->
   <string name="message_details_header__issues_need_your_attention">Ορισμένα ζητήματα χρειάζονται την προσοχή σου.</string>
   <string name="message_details_header__sent">Στάλθηκε στις</string>
   <string name="message_details_header__received">Ελήφθη στις</string>
+  <string name="message_details_header__disappears">Εξαφανίζεται</string>
   <string name="message_details_header__via">Μέσω</string>
   <string name="message_details_header__to">Προς:</string>
   <string name="message_details_header__from">Από:</string>
@@ -773,9 +807,8 @@
   <string name="AndroidManifest__enter_passphrase">Εισαγωγή συνθηματικού</string>
   <string name="AndroidManifest__select_contacts">Επιλογή επαφών</string>
   <string name="AndroidManifest__signal_detected">Το LibreSignal εντοπίστηκε</string>
-  <string name="AndroidManifest__public_identity_key">Δημόσιο κλειδί ταυτότητας</string>
   <string name="AndroidManifest__change_passphrase">Αλλαγή συνθηματικού</string>
-  <string name="AndroidManifest__verify_identity">Επιβεβαίωση ταυτότητας</string>
+  <string name="AndroidManifest__verify_safety_numbers">Επαλήθευση αριθμών ασφαλείας</string>
   <string name="AndroidManifest__log_submit">Αποστολή αρχείου συμβάντων αποσφαλμάτωσης</string>
   <string name="AndroidManifest__media_preview">Προεπισκόπιση</string>
   <string name="AndroidManifest__media_overview">Όλες οι εικόνες</string>
@@ -786,7 +819,6 @@
   <string name="AndroidManifest_archived_conversations">Αρχειοθετημένες συζητήσεις</string>
   <!--arrays.xml-->
   <string name="arrays__import_export">Εισαγωγή / εξαγωγή</string>
-  <string name="arrays__your_identity_key">Το κλειδί ταυτότητάς σου</string>
   <string name="arrays__use_default">Χρήση προκαθορισμένου</string>
   <string name="arrays__use_custom">Χρήση προσαρμοσμένου</string>
   <string name="arrays__mute_for_one_hour">Σίγαση για 1 ώρα</string>
@@ -903,6 +935,8 @@
   <string name="preferences__support_wifi_calling">Λειτουργία συμβατότητας \"WiFi Calling\' </string>
   <string name="preferences__enable_if_your_device_supports_sms_mms_delivery_over_wifi">Ενεργοποίηση αν η συσκευή σου χρησιμοποιεί παράδοση SMS/MMS μέσω WiFi (ενεργοποίηση μόνο αν το \'WiFi Calling\' είναι ενεργοποιημένο στη συσκευή σου)</string>
   <string name="preferences_app_protection__blocked_contacts">Μπλοκαρισμένες επαφές</string>
+  <string name="preferences_app_protection__safety_numbers_approval">Έγκριση αριθμών ασφαλείας</string>
+  <string name="preferences_app_protecting__require_approval_of_new_safety_numbers_when_they_change">Να απαιτείται έγκριση των νέων αριθμών ασφαλείας όταν αλλάζουν</string>
   <string name="preferences_notifications__display_in_notifications">Προβολή στις ειδοποιήσεις</string>
   <string name="preferences_chats__when_using_mobile_data">Όταν χρησιμοποιούνται δεδομένα</string>
   <string name="preferences_chats__when_using_wifi">Όταν χρησιμοποιείται WiFi</string>
@@ -936,6 +970,10 @@
   <string name="conversation_context__menu_resend_message">Αποστολή ξανά</string>
   <!--conversation_context_image-->
   <string name="conversation_context_image__save_attachment">Αποθήκευση συνημμένου</string>
+  <!--conversation_expiring_off-->
+  <string name="conversation_expiring_off__disappearing_messages">Μηνήματα που εξαφανίζονται</string>
+  <!--conversation_expiring_on-->
+  <string name="menu_conversation_expiring_on__messages_expiring">Μηνύματα που λήγουν</string>
   <!--conversation_insecure-->
   <string name="conversation_insecure__invite">Πρόσκληση</string>
   <!--conversation_insecure_no_push-->
@@ -954,8 +992,6 @@
   <!--conversation_list_fragment-->
   <string name="conversation_list_fragment__fab_content_description">Νεα Συζήτηση</string>
   <!--conversation_secure_verified-->
-  <string name="conversation_secure_verified__menu_security">Ασφάλεια</string>
-  <string name="conversation_secure_verified__menu_verify_identity">Επιβεβαίωση ταυτότητας</string>
   <string name="conversation_secure_verified__menu_reset_secure_session">Επαναφορά ασφαλούς συνεδρίας</string>
   <!--conversation_muted-->
   <string name="conversation_muted__unmute">Αποσίγαση</string>

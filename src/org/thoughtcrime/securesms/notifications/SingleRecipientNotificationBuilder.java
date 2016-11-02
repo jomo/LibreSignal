@@ -16,6 +16,7 @@ import android.support.v4.app.RemoteInput;
 import android.text.SpannableStringBuilder;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 
 import org.thoughtcrime.securesms.R;
 import org.thoughtcrime.securesms.crypto.MasterSecret;
@@ -150,16 +151,6 @@ public class SingleRecipientNotificationBuilder extends AbstractNotificationBuil
     }
   }
 
-  public void setTicker(@NonNull Recipient recipient, @Nullable CharSequence message) {
-    if (privacy.isDisplayMessage()) {
-      setTicker(getStyledMessage(recipient, message));
-    } else if (privacy.isDisplayContact()) {
-      setTicker(getStyledMessage(recipient, context.getString(R.string.SingleRecipientNotificationBuilder_new_message)));
-    } else {
-      setTicker(context.getString(R.string.SingleRecipientNotificationBuilder_new_message));
-    }
-  }
-
   @Override
   public Notification build() {
     if (privacy.isDisplayMessage()) {
@@ -210,6 +201,7 @@ public class SingleRecipientNotificationBuilder extends AbstractNotificationBuil
       return Glide.with(context)
                   .load(new DecryptableStreamUriLoader.DecryptableUri(masterSecret, uri))
                   .asBitmap()
+                  .diskCacheStrategy(DiskCacheStrategy.NONE)
                   .into(500, 500)
                   .get();
     } catch (InterruptedException | ExecutionException e) {
