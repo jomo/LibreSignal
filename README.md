@@ -1,45 +1,24 @@
-#The project was abandoned because of https://github.com/LibreSignal/LibreSignal/issues/37#issuecomment-217211165
+# LibreSignal *forever*
 
-# LibreSignal for Android
+Just a fork of the last LibreSignal build that was available via the experimental Eutopia.cz F-Droid repository.
 
-`LibreSignal` is the **Google-Free** fork of the original `Signal` messaging app for simple private communication with friends. `LibreSignal` uses your phone's data connection (WiFi/3G/4G) to communicate securely, optionally supports plain SMS/MMS to function as a unified messenger, and can also encrypt the stored messages on your phone. Featured on [Kuketz IT-Security Blog](https://www.kuketz-blog.de/?s=LibreSignal).
+This adds [a patch](https://github.com/gehaxelt/LibreSignal/commit/c9e4d37f28cff31c24955168a441a6d169d81f0a) by [@gehaxelt](https://github.com/gehaxelt) that removes the expiry message preventing users from sending messages.
 
-# WebSocket Support
-For push notifications, Google Cloud Messaging has been completely replaced by WebSocket to directly connect to Open Whisper Systems's server.
-It's done via a modified version of `libtextsecure`, which has been included as a submodule.
+Also, `org.libresignal` was changed back to `org.thoughtcrime.securesms` for compatibility because that's what the F-Droid build did.
 
-## Contributing Bug reports
-We use GitHub for bug tracking. Please search the [existing issues](https://github.com/LibreSignal/LibreSignal/issues) for your bug and create a new one if yours is not present.
+## Building
 
-## Contributing Translations
-Interested in helping to translate LibreSignal? Contribute here:
+> **This is not (and will not be) available for download anywhere!**
 
-https://www.transifex.com/projects/p/signal-android/
+You will have to build it yourself. See BUILDING.md.  
+Using `./gradlew -x lint -x javadoc build` worked for me.
 
-## Contributing Code
-Before contributing to LibreSignal, think about adding your code to [Signal-Android](https://github.com/WhisperSystems/Signal-Android/wiki), as we pull from there. Instructions on how to setup your development environment and build LibreSignal can be found in  [BUILDING.md](https://github.com/LibreSignal/LibreSignal/blob/master/BUILDING.md). If you're new to the LibreSignal codebase, we recommend going through our issues and picking out a simple bug to fix (check the "easy" label in our issues) in order to get yourself familiar. Also please have a look at the [CONTRIBUTING.md](https://github.com/LibreSignal/LibreSignal/blob/master/CONTRIBUTING.md), that might answer some questions.
+## Support / Bug Fixes / Feature Requests / Updates …
 
-## Contributing Ideas
-Have something you want to say about LibreSignal or want to be part of the conversation? Feel invited to [post your new idea](https://github.com/LibreSignal/LibreSignal/issues/new), but please be patient for a reply and don't be mad should developers decide to not implement it or are busy with other things.
+no.
 
-Help
-====
-## Support
-For troubleshooting and questions, please read our [FAQ](https://github.com/LibreSignal/LibreSignal/wiki/FAQ) and see our [GitHub Issues](https://github.com/LibreSignal/LibreSignal/issues)!
+## Signal
 
-## Documentation
-Looking for documentation? Check out the [original Signal wiki](https://github.com/WhisperSystems/Signal-Android/wiki).
+Since LibreSignal has been abandoned but has a 90 day killswitch, this is only provided as a temporary transitional "emergency" solution for people without GApps to use until Signals [works without it](https://github.com/LibreSignal/LibreSignal/issues/43).
 
-# Legal things
-## Cryptography Notice
-
-This distribution includes cryptographic software. The country in which you currently reside may have restrictions on the import, possession, use, and/or re-export to another country, of encryption software.
-BEFORE using any encryption software, please check your country's laws, regulations and policies concerning the import, possession, or use, and re-export of encryption software, to see if this is permitted.
-See <http://www.wassenaar.org/> for more information.
-
-The U.S. Government Department of Commerce, Bureau of Industry and Security (BIS), has classified this software as Export Commodity Control Number (ECCN) 5D002.C.1, which includes information security software using or performing cryptographic functions with asymmetric algorithms.
-The form and manner of this distribution makes it eligible for export under the License Exception ENC Technology Software Unrestricted (TSU) exception (see the BIS Export Administration Regulations, Section 740.13) for both object code and source code.
-
-## License
-
-Licensed under the GPLv3: http://www.gnu.org/licenses/gpl-3.0.html
+Note: It's only called *forever* because it doesn't expire ¯\\\_(ツ)\_/¯ 
