@@ -146,7 +146,7 @@ android {
     buildToolsVersion '23.0.2'
 
     defaultConfig {
-        applicationId "org.libresignal"
+        applicationId "org.thoughtcrime.securesms"
         minSdkVersion 9
         targetSdkVersion 22
 
